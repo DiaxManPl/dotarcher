@@ -1,0 +1,3 @@
+2024/03/18-20:50:22.438 2b65 Reusing MANIFEST /home/artemis/.config/thorium/Default/Sync Data/LevelDB/MANIFEST-000001
+2024/03/18-20:50:22.444 2b65 Recovering log #3
+2024/03/18-20:50:22.444 2b65 Reusing old log /home/artemis/.config/thorium/Default/Sync Data/LevelDB/000003.log 
