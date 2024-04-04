@@ -1,79 +1,56 @@
+@define-color main-bg #11111b;
+@define-color wb-act-bg #a6adc8;
+@define-color wb-hover-bg #f5c2e7;
+
 * {
     background-image: none;
-    font-size: ${fontSize}px;
+    font-size: ${font_size}px;
 }
 
 window {
-    background-color: #ff0000;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 button {
-    color: ${button_color};
-    background-color: ${button_background};
+    color: white;
+    background-color: @main-bg;
     outline-style: none;
     border: none;
     border-width: 0px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 10%;
+    background-size: 20%;
     border-radius: 0px;
     box-shadow: none;
     text-shadow: none;
 }
 
-button:focus {
-    background-color: #0000ff;
-    background-size: 20%;
-}
-
-button:hover {
-    background-color: #00ff00;
-    background-size: 25%;
-    border-radius: ${active_radius}px;
-    animation: gradient_f 20s ease-in infinite;
+button:hover, button:focus {
+    background-color: @wb-hover-bg;
+    background-size: 30%;
     transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
-}
-
-button:hover#lock {
-    border-radius: ${active_radius}px ${active_radius}px 0px ${active_radius}px;
-    margin : ${y_hvr}px 0px 0px ${x_hvr}px;
-}
-
-button:hover#logout {
-    border-radius: ${active_radius}px 0px ${active_radius}px ${active_radius}px;
-    margin : 0px 0px ${y_hvr}px ${x_hvr}px;
-}
-
-button:hover#shutdown {
-    border-radius: ${active_radius}px ${active_radius}px ${active_radius}px 0px;
-    margin : ${y_hvr}px ${x_hvr}px 0px 0px;
-}
-
-button:hover#reboot {
-    border-radius: 0px ${active_radius}px ${active_radius}px ${active_radius}px;
-    margin : 0px ${x_hvr}px ${y_hvr}px 0px;
 }
 
 #lock {
     background-image: image(url("$HOME/.config/wlogout/icons/lock_${button_color}.png"), url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
     border-radius: ${button_radius}px 0px 0px 0px;
-    margin : ${y_mgn}px 0px 0px ${x_mgn}px;
+    margin : ${margin_y}px 0px 0px ${margin_x}px;
 }
 
 #logout {
     background-image: image(url("$HOME/.config/wlogout/icons/logout_${button_color}.png"), url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
-    border-radius: 0px 0px 0px ${button_radius}px;
-    margin : 0px 0px ${y_mgn}px ${x_mgn}px;
+    border-radius: 0px ${button_radius}px 0px 0px;
+    margin : ${margin_y}px ${margin_x}px 0px 0px;
 }
 
 #shutdown {
     background-image: image(url("$HOME/.config/wlogout/icons/shutdown_${button_color}.png"), url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
-    border-radius: 0px ${button_radius}px 0px 0px;
-    margin : ${y_mgn}px ${x_mgn}px 0px 0px;
+    border-radius: 0px 0px 0px ${button_radius}px;
+    margin : 0px 0px ${margin_y}px ${margin_x}px;
 }
 
 #reboot {
     background-image: image(url("$HOME/.config/wlogout/icons/reboot_${button_color}.png"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
     border-radius: 0px 0px ${button_radius}px 0px;
-    margin : 0px ${x_mgn}px ${y_mgn}px 0px;
+    margin : 0px ${margin_x}px ${margin_y}px 0px;
 }

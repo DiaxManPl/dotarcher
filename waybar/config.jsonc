@@ -1,0 +1,53 @@
+{
+    "layer": "top",
+    "height": 16,
+    "modules-left": [
+        "hyprland/workspaces",
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "group/system",
+        "clock",
+    ],
+
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": true,
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
+        "format": "{icon}",
+		    "on-click": "activate",
+		    "format-icons": {
+			      "urgent": "",
+			      "active": "",
+			      "default": "󰧞",
+            "sort-by-number": true
+        }
+    },
+    "group/system": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory", "disk"]
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "format-alt": " {avg_frequency} GHz",
+        "interval": 5
+    },
+    "memory": {
+        "format": "  {}%",
+        "format-alt": "  {used}/{total} GiB",
+        "interval": 5
+    },
+    "disk": {
+        "format": " {}%",
+        "format-alt": " {used}/{total} GiB",
+        "interval": 5,
+    },
+    "clock": {
+		    "format": " {:%H:%M}",
+		    "tooltip": "true",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%d.%m}"
+	  },
+}
